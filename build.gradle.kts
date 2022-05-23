@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.6.21"
+    id("org.jlleitschuh.gradle.ktlint") version "10.3.0"
     application
 }
 
@@ -14,6 +15,8 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:5.3.0")
+    testImplementation("io.kotest:kotest-assertions-core:5.3.0")
 }
 
 tasks.test {

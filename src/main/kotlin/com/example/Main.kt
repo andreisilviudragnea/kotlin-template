@@ -1,3 +1,9 @@
+package com.example
+
+fun sum(x: Int, y: Int): Int {
+    return x + y
+}
+
 fun main(args: Array<String>) {
     println("Hello World!")
 
