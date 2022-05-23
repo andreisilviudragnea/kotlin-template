@@ -10,7 +10,7 @@ class SumTest : StringSpec({
         forAll(
             row(1, 5, 6),
             row(1, 0, 1),
-            row(0, 0, 0)
+            row(0, 0, 1)
         ) { a, b, expectedSum ->
             sum(a, b) shouldBe expectedSum
         }
