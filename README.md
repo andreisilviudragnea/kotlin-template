@@ -10,3 +10,4 @@ Kotlin template repository
 - CI with cached Gradle dependencies
 - Automatic code formatting, with failing build if unformatted
 - Automatic dependency updates (Renovate)
+- TODO: Fail build on missing coverage
