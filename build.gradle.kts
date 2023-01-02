@@ -19,9 +19,6 @@ dependencies {
     testImplementation("io.kotest:kotest-assertions-core:5.5.4")
     testImplementation("org.assertj:assertj-core:3.23.1")
     testImplementation("io.mockk:mockk:1.13.3")
-    testImplementation("org.apache.kafka:kafka-clients:3.3.1")
-    testImplementation("org.apache.logging.log4j:log4j-core:2.19.0")
-    testImplementation("org.apache.logging.log4j:log4j-slf4j2-impl:2.19.0")
 }
 
 tasks.test {
