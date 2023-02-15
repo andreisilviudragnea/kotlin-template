@@ -38,10 +38,12 @@ class UrlShortenerServiceTest : StringSpec({
     "shortenUrl incremental seo" {
         val seoGenerationPolicy = IncrementalSeoPolicy()
         UrlShortenerService(
-            URI("http://short.com"), seoGenerationPolicy
+            URI("http://short.com"),
+            seoGenerationPolicy
         ).shortenUrl(URI("http://looooong.com/somepath")) shouldBe URI("http://short.com/1")
         UrlShortenerService(
-            URI("http://short.com"), seoGenerationPolicy
+            URI("http://short.com"),
+            seoGenerationPolicy
         ).shortenUrl(URI("http://looooong.com/somepath")) shouldBe URI("http://short.com/2")
     }
 })
