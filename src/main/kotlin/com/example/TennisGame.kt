@@ -15,7 +15,9 @@ class TennisGame(private val playerOneName: String, private val playerTwoName: S
             if (isDeuce) return "Deuce"
             return if (playerOneScore == playerTwoScore) {
                 translateScore(playerOneScore) + " all"
-            } else translateScore(playerOneScore) + "," + translateScore(playerTwoScore)
+            } else {
+                translateScore(playerOneScore) + "," + translateScore(playerTwoScore)
+            }
         }
 
     private val isDeuce: Boolean
