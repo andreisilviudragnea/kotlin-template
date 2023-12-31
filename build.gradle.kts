@@ -17,7 +17,7 @@ dependencies {
     testImplementation(kotlin("test"))
     testImplementation("io.kotest:kotest-runner-junit5-jvm:5.8.0")
     testImplementation("io.kotest:kotest-assertions-core:5.8.0")
-    testImplementation("org.assertj:assertj-core:3.24.2")
+    testImplementation("org.assertj:assertj-core:3.25.0")
     testImplementation("io.mockk:mockk:1.13.8")
 }
 
