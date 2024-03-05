@@ -9,20 +9,20 @@ class UrlShortenerServiceTest : StringSpec({
     "shortenUrl 1" {
         UrlShortenerService(URI("http://short.com")) { "abcd" }.shortenUrl(
             URI("http://looooong.com/somepath"),
-            "MY-NEW-WS"
+            "MY-NEW-WS",
         ) shouldBe URI("http://short.com/MY-NEW-WS")
     }
 
     "shortenUrl 2" {
         UrlShortenerService(URI("http://short.com")) { "abcd" }.shortenUrl(
             URI("http://looooong.com/somepath"),
-            "POTATO"
+            "POTATO",
         ) shouldBe URI("http://short.com/POTATO")
     }
 
     "shortenUrl random seo" {
         UrlShortenerService(
-            URI("http://short.com")
+            URI("http://short.com"),
         ) { "abcd" }.shortenUrl(URI("http://looooong.com/somepath")) shouldBe URI("http://short.com/abcd")
     }
 
@@ -30,7 +30,7 @@ class UrlShortenerServiceTest : StringSpec({
         assertThatThrownBy {
             UrlShortenerService(URI("http://short.com")) { "abcd" }.shortenUrl(
                 URI("http://looooong.com/somepath"),
-                ".".repeat(21)
+                ".".repeat(21),
             )
         }.isInstanceOf(IllegalArgumentException::class.java).hasMessage("seo is longer than 20 characters")
     }
@@ -39,11 +39,11 @@ class UrlShortenerServiceTest : StringSpec({
         val seoGenerationPolicy = IncrementalSeoPolicy()
         UrlShortenerService(
             URI("http://short.com"),
-            seoGenerationPolicy
+            seoGenerationPolicy,
         ).shortenUrl(URI("http://looooong.com/somepath")) shouldBe URI("http://short.com/1")
         UrlShortenerService(
             URI("http://short.com"),
-            seoGenerationPolicy
+            seoGenerationPolicy,
         ).shortenUrl(URI("http://looooong.com/somepath")) shouldBe URI("http://short.com/2")
     }
 })

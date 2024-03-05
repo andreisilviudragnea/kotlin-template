@@ -13,7 +13,11 @@ class InvalidAmountException(fromAmount: Int, actualAmount: Int) : RuntimeExcept
 // DDD - Domain driven design
 // How a database index is implemented
 class BalanceTransferService {
-    fun transfer(from: Account, to: Account, amount: Int) {
+    fun transfer(
+        from: Account,
+        to: Account,
+        amount: Int,
+    ) {
         if (from == to) {
             throw IllegalArgumentException("Same from and to accounts")
         }
