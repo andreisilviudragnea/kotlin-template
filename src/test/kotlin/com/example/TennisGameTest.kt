@@ -6,7 +6,10 @@ import io.kotest.matchers.shouldBe
 class TennisGameTest : FunSpec({
     fun newGame() = TennisGame("Boris Becker", "Bjørn Borg")
 
-    fun TennisGame.createScore(playerOneBalls: Int, playerTwoBalls: Int) {
+    fun TennisGame.createScore(
+        playerOneBalls: Int,
+        playerTwoBalls: Int,
+    ) {
         for (i in 0 until playerOneBalls) {
             playerOneScores()
         }

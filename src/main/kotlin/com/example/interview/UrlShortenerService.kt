@@ -26,7 +26,10 @@ class IncrementalSeoPolicy(private var currentVal: AtomicInteger = AtomicInteger
 class UrlShortenerService(private val shortenerUrl: URI, private val seoGenerationPolicy: SeoGenerationPolicy) {
     private val store = mutableMapOf<String, URI>()
 
-    fun shortenUrl(url: URI, seo: String): URI {
+    fun shortenUrl(
+        url: URI,
+        seo: String,
+    ): URI {
         if (seo.length > 20) {
             throw IllegalArgumentException("seo is longer than 20 characters")
         }
@@ -38,7 +41,10 @@ class UrlShortenerService(private val shortenerUrl: URI, private val seoGenerati
         return shortenUrlInternal(url, seoGenerationPolicy.generateSeo())
     }
 
-    private fun shortenUrlInternal(url: URI, seo: String): URI {
+    private fun shortenUrlInternal(
+        url: URI,
+        seo: String,
+    ): URI {
         store[seo] = url
         return URI("$shortenerUrl/$seo")
     }

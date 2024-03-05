@@ -1,6 +1,9 @@
 package com.example
 
-fun sum(x: Int, y: Int): Int {
+fun sum(
+    x: Int,
+    y: Int,
+): Int {
     return x + y
 }
 
